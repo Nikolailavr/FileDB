@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./project
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=django-insecure-cidr7seay1dgso)_9sg6m7w^9-70#yd%puxv1d9)l+ajrz0lp6
+      - ALLOWED_HOSTS=127.0.0.1 localhost [::1]
+      - DEBUG=False
+    volumes:
+      - ./project:/usr/src/app/
+    ports:
+      - 8000:8000
